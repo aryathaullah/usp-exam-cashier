@@ -1,8 +1,4 @@
 <?php
-/**
- * File: functions.php
- * Berisi fungsi-fungsi helper untuk aplikasi kasir
- */
 
 // Fungsi untuk menampilkan pesan alert
 function showAlert($type, $message) {

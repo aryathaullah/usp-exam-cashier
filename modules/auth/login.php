@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         if (mysqli_num_rows($result) == 1) {
             $user = mysqli_fetch_assoc($result);
-            
+
             // Verifikasi password
             if (password_verify($password, $user['password'])) {
                 // Set session
@@ -69,9 +69,10 @@ if (isset($_SESSION['login_error'])) {
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KASIRKU - LOGIN PAGE</title>
+    <title>LOGIN PAGE</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
@@ -79,6 +80,7 @@ if (isset($_SESSION['login_error'])) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../assets/css/login.css">
+
 </head>
 <body>
     <div class="login-container">
@@ -116,10 +118,5 @@ if (isset($_SESSION['login_error'])) {
             &copy; <?php echo date('Y'); ?> SISTEM KASIR - USP SMKN 1 SURABAYA
         </div>
     </div>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

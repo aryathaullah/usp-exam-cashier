@@ -22,7 +22,7 @@ require_once 'includes/functions.php';
 $page = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
 
 // Validasi halaman
-$allowed_pages = ['dashboard', 'kategori', 'kategori_tambah', 'kategori_edit', 'item', 'item_tambah', 'item_edit', 'transaksi', 'cart', 'checkout', 'history', 'transaksi_detail'];
+$allowed_pages = ['dashboard', 'kategori', 'kategori_tambah', 'kategori_edit', 'item', 'item_tambah', 'item_edit', 'transaksi', 'cart', 'history', 'transaksi_detail'];
 if (!in_array($page, $allowed_pages)) {
     $page = 'dashboard';
 }
@@ -46,8 +46,6 @@ if ($page == 'dashboard') {
     $file_path = 'modules/transaksi/index.php';
 } elseif ($page == 'cart') {
     $file_path = 'modules/transaksi/cart.php';
-} elseif ($page == 'checkout') {
-    $file_path = 'modules/transaksi/checkout.php';
 } elseif ($page == 'history') {
     $file_path = 'modules/transaksi/history.php';
 } elseif ($page == 'transaksi_detail') {
@@ -62,7 +60,7 @@ include_once 'includes/header.php';
 // Sidebar
 include_once 'includes/sidebar.php';
 
-// Tampilkan konten halaman
+// Content
 include($file_path);
 
 // Footer

@@ -33,18 +33,6 @@ $current_page = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
                 Transaksi
             </a>
         </li>
-        <!-- <li>
-            <a href="index.php?page=history" class="<?php echo ($current_page == 'history') ? 'active' : ''; ?>">
-                Histori Transaksi
-            </a>
-        </li> -->
-        <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'admin'): ?>
-        <li>
-            <a href="index.php?page=users" class="<?php echo ($current_page == 'users') ? 'active' : ''; ?>">
-                <i class="fas fa-users"></i> Manajemen User
-            </a>
-        </li>
-        <?php endif; ?>
         <li class="logout">
             <a href="modules/auth/logout.php">
                 <i class="fas fa-sign-out-alt"></i> Keluar
@@ -55,7 +43,4 @@ $current_page = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
 
 <!-- Content -->
 <div class="content">
-    <!-- Toggle button untuk sidebar pada tampilan mobile -->
-    <button type="button" id="sidebarCollapse" class="btn btn-info d-md-none">
-        <i class="fas fa-bars"></i>
-    </button>
+    
