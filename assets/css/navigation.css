@@ -1,0 +1,241 @@
+/* Styling untuk layout utama */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+    margin: 0; 
+    padding: 0; 
+  }
+  
+  .wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+  }
+  
+  /* Styling untuk sidebar modern */
+  #sidebar {
+    min-width: 260px;
+    max-width: 260px;
+    background: color(#ffffff);
+    transition: all 0.3s ease;
+    height: 100%; /* Changed from 100vh to 100% */
+    position: fixed;
+    top: 0; /* Ensure it starts from the very top */
+    left: 0; /* Ensure it starts from the very left */
+    z-index: 999;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+  }
+  
+  #sidebar.active {
+    margin-left: -260px;
+  }
+  
+  #sidebar .sidebar-header {
+    padding: 25px 20px;
+    /* background: rgba(0, 0, 0, 0.2); */
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  #sidebar .sidebar-header h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #sidebar .sidebar-header h3 i {
+    margin-right: 10px;
+    font-size: 1.8rem;
+  }
+  
+  #sidebar ul.components {
+    padding: 15px 0;
+    margin: 0; /* Reset default margin */
+  }
+  
+  #sidebar ul li {
+    width: 100%;
+    margin-bottom: 5px;
+    list-style-type: none; /* Ensure no bullets */
+  }
+  
+  #sidebar ul li a {
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    /* color: rgba(255, 255, 255, 0.8); */
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+    font-weight: 400;
+    border-radius: 5px 5px 5px 5px;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  
+  #sidebar ul li a:hover {
+    background-color: rgba(0, 123, 255, 0.15);
+    color: color(#007bff);
+    border-left: 4px solid #007bff;
+  }
+  
+  #sidebar ul li a.active {
+    background-color: rgba(0, 123, 255, 0.15); 
+    color: color(#007bff);
+    border-left: 4px solid #007bff;
+    font-weight: 500;
+  }
+  
+  #sidebar ul li a i {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    opacity: 0.85;
+  }
+  
+  /* Hover effect for icons */
+  #sidebar ul li a:hover i {
+    transform: translateX(3px);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Special styling for logout */
+  #sidebar ul li.logout {
+    margin-top: 30px;
+  }
+  
+  #sidebar ul li.logout a {
+    background-color: rgba(220, 53, 69, 0.2);
+    border-left: 4px solid transparent;
+    color: #000000;
+    margin-top: 20px;
+  }
+  
+  #sidebar ul li.logout a:hover {
+    background-color: rgba(220, 53, 69, 0.4);
+    border-left: 4px solid #dc3545;
+  }
+  
+  /* Styling untuk konten */
+  .content {
+    width: calc(100% - 260px); /* Adjust width to account for sidebar */
+    min-height: 100vh;
+    transition: all 0.3s;
+    margin-left: 260px;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+  
+  .content.active {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  /* Efek fade-in untuk konten */
+  .fade-in {
+    animation: fadeIn ease 0.5s;
+  }
+  
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    #sidebar {
+      margin-left: -260px;
+    }
+    #sidebar.active {
+      margin-left: 0;
+    }
+    .content {
+      width: 100%;
+      margin-left: 0;
+      padding: 20px 15px; /* Reduced padding on mobile */
+    }
+    .content.active {
+      margin-left: 260px;
+      width: calc(100% - 260px);
+    }
+  }
+  
+  /* Styling untuk tombol toggle sidebar */
+  #sidebarCollapse {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  #sidebarCollapse i {
+    font-size: 1.2rem;
+  }
+  
+  /* Sisanya dari CSS Anda tetap sama */
+  .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border: none;
+  }
+  
+  .card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+    border-radius: 10px 10px 0 0 !important;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-collapse: collapse;
+  }
+  
+  .table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: rgba(33, 133, 208, 0.1);
+  }
+  
+  .btn-primary {
+    background-color: #4b6cb7;
+    border-color: #4b6cb7;
+  }
+  
+  .btn-primary:hover {
+    background-color: #3a5a9d;
+    border-color: #3a5a9d;
+  }
+  
+  .form-control:focus {
+    border-color: #4b6cb7;
+    box-shadow: 0 0 0 0.2rem rgba(75, 108, 183, 0.25);
+  }
